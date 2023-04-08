@@ -1,15 +1,15 @@
 import '../styles/thumbnail.css'
 import data from '../data/content.json'
+import {Link} from 'react-router-dom'
 
 function Thumbnail() {
-    console.log(data)
     return(
         
         <ul className='wrapper'>
 
             {data.map((logement) => (
 
-                <a href="">
+                <Link to={'/fiche/' + logement.id}>
 
                     <li key={ logement.id } 
                     className='thumb' 
@@ -23,7 +23,7 @@ function Thumbnail() {
 
                     </li> 
                 
-                </a>
+                </Link>
 
             ))}
             </ul>

@@ -3,21 +3,22 @@
     flex-direction: column;
     color: #FF6060;
     align-items: center;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 .component-error h3 {
     margin: 0;
-    font-size: 288px;
+    font-size: 270px;
 }
 
 .component-error p {
     font-size: 36px;
+    margin-bottom: 150px;
 }
 
 .component-error a {
     color: #FF6060;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .component-error a:hover {

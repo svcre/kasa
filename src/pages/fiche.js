@@ -1,14 +1,18 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Infos from '../components/infos'
-import './styles/body.css'
+import '../styles/body.css'
 
 function Fiche() {
     return (
         <>
-        <Header />
+        <div className="content">
 
-        <Infos />
+            <Header />
+
+            <Infos />
+            
+        </div>
 
         <Footer />
         </>
