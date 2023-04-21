@@ -11,6 +11,10 @@
     width: 48%;
 }
 
+.wrapper-box:nth-child(1){
+    margin-right: 5px;
+}
+
 .small-box-title {
     display: flex;
     flex-direction: row;
