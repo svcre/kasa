@@ -1,10 +1,10 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
-import Content from '../components/error'
+import Content from '../components/content'
 import '../styles/body.css'
 
 function About() {
-    return (
+    return(
         <>
         <div className="content">
 

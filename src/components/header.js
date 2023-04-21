@@ -11,7 +11,7 @@ function Header() {
         <div className = "header-links-div">
 
         <Link to = "/"> Accueil </Link> 
-        <Link to = "about"> A propos </Link>
+        <Link to = "/about"> A propos </Link>
 
         </div>
 

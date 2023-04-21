@@ -1,4 +1,5 @@
 import '../styles/menu-l.css'
+import Banner from '../components/banner2'
 import ArrowUp from '../assets/arrow-up.png'
 import ArrowDown from '../assets/arrow-down.png' 
 import { useState } from 'react'
@@ -12,6 +13,8 @@ function Content() {
 
 return (
 <>
+
+    <Banner />
 
 <div className="wrapper">
 
