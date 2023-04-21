@@ -1,22 +1,52 @@
 import '../styles/menu-s.css'
 import ArrowUp from '../assets/arrow-up.png'
+import ArrowDown from '../assets/arrow-down.png' 
+import { useState } from 'react'
 
-function Description() {
+
+function Description(logement) {
+
+    const [showDescription, setshowDescription] = useState(true)
+    const toggleDescription = () => {
+        setshowDescription(!showDescription)
+    }
+    const [showEquipment, setshowEquipment] = useState(true)
+    const toggleEquipment = () => {
+        setshowEquipment(!showEquipment)
+    }
+
+
     return(
 
         <div className="overall-wrapper">
             <div className="wrapper-box">
-                <div className="small-box-title"><p>Description</p>
-                <img src= { ArrowUp } alt="flèche haute" />
+                <div className="small-box-title">
+                    <p>Description</p>
+                    <img src= {`${showDescription ? ArrowUp : ArrowDown}`} alt="flèche haute" onClick={toggleDescription} />
                 </div>
-                <div className="small-box-content"><p>Vous serez à 50m du canal Saint-martin où vous pourrez pique-niquer l'été et à côté de nombreux bars et restaurants. Au cœur de Paris avec 5 lignes de métro et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d'affaires. Vous êtes à1 station de la gare de l'est (7 minutes à pied). </p></div>
+
+                <div className={`${showDescription ? "description-box" : "invisible"}`}>
+                    <p>
+                        {logement.description}
+                    </p>
+                </div>
             </div>
 
             <div className="wrapper-box">
-                <div className="small-box-title"><p>Equipement</p>
-                <img src= { ArrowUp } alt="flèche haute" />
+                <div className="small-box-title">
+                    <p>Equipement</p>
+                    <img src= {`${showEquipment ? ArrowUp : ArrowDown }`} alt="flèche haute" onClick={toggleEquipment} />
                 </div>
-                <div className="small-box-content"><p>Vous serez à 50m du canal Saint-martin où vous pourrez pique-niquer l'été et à côté de nombreux bars et restaurants. Au cœur de Paris avec 5 lignes de métro et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d'affaires. Vous êtes à1 station de la gare de l'est (7 minutes à pied). </p></div>
+
+                <div className={`${showEquipment ? "description-box" : "invisible"}`}>
+                    <p>
+                    {
+                    logement.equipements.map((equipement, index) => (
+                        <li key={index}>{equipement}</li>
+                    ))
+                }
+                    </p>
+                </div>
             </div>
 
             

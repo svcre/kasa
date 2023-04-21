@@ -4,6 +4,7 @@
     justify-content: space-between;
     background-image: url(../assets/bg2.jpg);
     background-size: cover;
+    background-position: center;
     width: 100%;
     height: 100%;
     height: 415px;
@@ -35,4 +36,16 @@
     align-items: flex-end;
     height: 100%;
     color: #fff;
+}
+
+@media (max-width: 435px) {
+    .carousel-wrapper{
+        height: 255px;
+    }
+
+    .carousel-wrapper img{
+        height: 30px;
+    }
+
+
 }

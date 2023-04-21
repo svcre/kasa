@@ -4,33 +4,42 @@ import rightarrow from '../assets/right-arrow.png'
 import data from '../data/content.json'
 
 import { useParams } from 'react-router-dom'
+import React, { useState } from 'react';
 
 
-function Carousel() {
+function Carousel(logement) {
 
     let params = useParams()
     let id = params.id
     let index = data.map(function (logement) {return logement.id; }).indexOf(id);
 
+    let nb = logement.pictures.length
+
+    const [count, setcount] = useState(0);
+
     function previous() {
-        console.log("coucou")
+        if (count !== 0) {
+            setcount((count - 1))
+        }
     }
     
     function next() {
-        console.log("coucou")
+        if (count !== (nb - 1)) {
+            setcount((count + 1))
+        }
     }
 
 
     return(
 
-        <div className="carousel-wrapper" style={{backgroundImage: `url(${data[index].pictures[0]})`}}>
+        <div className="carousel-wrapper" style={{backgroundImage: `url(${data[index].pictures[count]})`}}>
         
             <div className="arrow-wrapper-left">
                 <img src= { leftarrow } id="left" alt="left arrow" onClick={previous} />
             </div>
 
             <div className="index-wrapper">
-                <p>index img / max.length</p>
+                <p>{ (count+1) } / { nb }</p>
             </div>
 
             <div className="arrow-wrapper-right">

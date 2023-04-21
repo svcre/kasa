@@ -7,12 +7,11 @@ function Thumbnail() {
         
         <ul className='wrapper'>
 
-            {data.map((logement) => (
+            {data.map((logement, index) => (
 
-                <Link to={'/fiche/' + logement.id}>
+                <Link to={'/fiche/' + logement.id} key={ index }>
 
-                    <li key={ logement.id } 
-                    className='thumb' 
+                    <li className='thumb' 
                     style={{backgroundImage: `url(${logement.cover})`}}>
 
                         <div className='thumb-inner'>

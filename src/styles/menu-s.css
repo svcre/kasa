@@ -22,6 +22,7 @@
     padding-left: 15px;
     padding-right: 15px;
     margin-bottom: -5px;
+    margin-top: 15px;
     z-index: 2;
 
 }
@@ -31,16 +32,42 @@
     height: 13px;
 }
 
-.small-box-content {
+.description-box {
     background-color: #F6F6F6;
     color: #FF6060;
     border-radius: 5px;
     padding: 20px;
+    visibility: visible;
 }
 
-.small-box-content p{
+.invisible{
+    display: none;
+    visibility: hidden;
+}
+
+.description-box p{
     color: #FF6060;
     font-size: 18px;
     line-height: 143%;
 }
 
+
+@media (max-width: 435px) {
+    
+    .overall-wrapper{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .wrapper-box{
+        width: 100%;
+}
+
+.small-box-title p{
+    font-size: 14px;}
+
+.description-box p{
+    font-size: 14px;
+}
+
+}

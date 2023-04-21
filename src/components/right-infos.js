@@ -1,32 +1,42 @@
 import '../styles/infos.css'
-import data from '../data/content.json'
-import { useParams } from 'react-router-dom'
 
 import logo from '../assets/LOGO.png'
 import star from '../assets/star.png'
 import emptystar from '../assets/empty-star.png'
 
 
-function RightInfos() {
+function RightInfos(logement) {
 
-    let params = useParams()
-    let id = params.id
-    let index = data.map(function (logement) {return logement.id; }).indexOf(id);
+    function Rating() {
+        let htmlString = []
+        const stars = Number(logement.rating)
+        for (let i=0;i<stars;i++) {
+            htmlString.push(
+                <img src= { star }></img>
+            )
+        }
+        if (stars !== 5) {
+            for (let i=0;i<(5-stars);i++) {
+                htmlString.push(
+                    <img src= { emptystar }></img>
+                )
+            }
+        }
+        return htmlString
+    } 
 
     return(
 <>
         <div className="profile">
             <div className="name">
-                <p> { data[index].host.name } </p>
+                <p> { logement.host }  </p>
             </div>
-            <img src= { data[index].host.picture }></img>
+            <img src=  { logement.avatar } alt=" avatar locataire " ></img>
         </div>
         <div className="rate">
-        <img src= { star }></img>
-        <img src= { star }></img>
-        <img src= { star }></img>
-        <img src= { star }></img>
-        <img src= { emptystar }></img>
+
+            { Rating() }
+        
         </div>
 </>
 

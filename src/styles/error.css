@@ -8,11 +8,11 @@
 
 .component-error h3 {
     margin: 0;
-    font-size: 270px;
+    font-size: 19vw;
 }
 
 .component-error p {
-    font-size: 36px;
+    font-size: 2.5vw;
     margin-bottom: 150px;
 }
 
@@ -23,4 +23,18 @@
 
 .component-error a:hover {
     text-decoration: underline;
+}
+
+
+@media (max-width: 435px) {
+
+    .component-error h3 {
+        font-size: 140px;
+    }
+
+    .component-error p {
+        font-size: 18px;
+        margin-bottom: 100px;
+        text-align: center;
+    }
 }
